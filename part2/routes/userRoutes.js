@@ -76,9 +76,8 @@ router.get('/userdogList', async (req, res) => {
   try {
     const [rows] = await db.query(`
       SELECT Dogs.name, Dogs.dog_id FROM Dogs INNER JOIN Users ON
-      
-      WHERE email = ? AND password_hash = ?
-    `, [req.session.username]);
+
+      WHERE Users. = ?`, [req.session.username]);
 
     if (rows.length === 0) {
       return res.status(401).json({ error: 'Invalid credentials' });
