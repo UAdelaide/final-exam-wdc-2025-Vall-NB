@@ -13,7 +13,8 @@ var app = express();
     try {
         var dbConnectionPool = mysql.createPool({ database: 'pokepare', user: 'root' });
 
-        var exist = dbConnectionPool.query("INSERT INTO Users (username, email, password_hash, role) VALUES ('alice123', 'alice@example.com', 'hashed123', 1)");
+        var exist = dbConnectionPool.query("SELECT * FROM Users");
+        if (extist )
         await dbConnectionPool.query("INSERT INTO Users (username, email, password_hash, role) VALUES ('alice123', 'alice@example.com', 'hashed123', 1)");
         await dbConnectionPool.query("INSERT INTO Users (username, email, password_hash, role) VALUES ('bobwalker', 'bob@example.com', 'hashed456', 2)");
 
