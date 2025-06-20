@@ -75,7 +75,7 @@ router.get('/userdogList', async (req, res) => {
   //console.log("test");
   try {
     const [rows] = await db.query(`
-      SELECT Dogs.name, Dogs. FROM Users
+      SELECT Dogs.name, Dogs.dog_id FROM Users
       WHERE email = ? AND password_hash = ?
     `, [req.session.username]);
 
