@@ -36,15 +36,15 @@ function tablegen() {
             for (var i = 0; i < this.responseText.length; i++) {
                 rowstr = `<tr> <td>${data[i].dog_name}</td><td>${data[i].owner_username}</td><td>${data[i].size}</td>`;
                 document.getElementById('dog_id').innerHTML += rowstr;
-                    var xhttp = new XMLHttpRequest();
+                    var xhttp2 = new XMLHttpRequest();
 
-                    xhttp.onreadystatechange = function() {
+                    xhttp2.onreadystatechange = function() {
                         if (this.readyState === 4 && this.status === 200) {
 
                         }
                     };
-    xhttp.open("GET", "/api/dogs", true);
-    xhttp.send();
+                    xhttp2.open("GET", "/api/dogs", true);
+                    xhttp2.send();
 
             }
         }
