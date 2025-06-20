@@ -22,6 +22,6 @@ function optiongen() {
             }
         }
     };
-    xhttp.open("GET", "/doglist", true);
+    xhttp.open("GET", "/userdogList", true);
     xhttp.send();
 }
