@@ -35,14 +35,14 @@ function tablegen() {
             document.getElementById('table-body').innerHTML = '';
             rowstr = ``;
             for (var i = 0; i < this.responseText.length; i++) {
-                name = r
+                name = data[i].dog_name
                 rowstr = `<tr> <td>${data[i].dog_name}</td><td>${data[i].owner_username}</td><td>${data[i].size}</td>`;
                 document.getElementById('dog_id').innerHTML += rowstr;
                     var xhttp2 = new XMLHttpRequest();
 
                     xhttp2.onreadystatechange = function() {
                         if (this.readyState === 4 && this.status === 200) {
-                            rowstr+=`<td><img src=""></td></tr>`;
+                            rowstr+=`<td><img src="${name}"></td></tr>`;
                         }
                     };
                     xhttp2.open("GET", "/api/dogs", true);
