@@ -64,8 +64,9 @@
               method: 'GET',
             });
             const result = await res.json();
-            // If exists, return
+            // If exists, run apply to walk
             if (!res.ok) throw new Error(result.error || 'Application failed');
+            callback()
             return result;
           } catch (err) {
             error.value = err.message;
