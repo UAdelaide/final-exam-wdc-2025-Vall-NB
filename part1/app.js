@@ -16,7 +16,11 @@ app.use(function(req, res, next) {
     next();
 });
 
-(async ())
+(async () =>  {
+    try {
+
+    }
+})
 
 
 app.use(logger('dev'));
