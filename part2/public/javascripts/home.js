@@ -8,6 +8,7 @@ function login() {
             var data = json.parse(this.responseText);
 
             if (data[0].role === 1) {
+                location.replace("http://localhost:8080/walker-dashboard.html")
 
             } else {
                 location.replace("http://localhost:8080/walker-dashboard.html")
