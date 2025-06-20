@@ -13,11 +13,6 @@ function logout() {
             }
         }
     };
-    xhttp.open("POST", "/login", true);
-    xhttp.setRequestHeader("Content-type", "application/json");
-    // Gets email and password from index page
-    var loginmail = document.getElementById('Lemail').value;
-    var loginpass = document.getElementById('Lpassword').value;
-
-    xhttp.send(JSON.stringify({email: loginmail, password: loginpass}));
+    xhttp.open("GET", "/logout", true);
+    xhttp.send();
 }
