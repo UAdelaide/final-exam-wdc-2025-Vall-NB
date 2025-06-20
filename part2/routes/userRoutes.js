@@ -78,6 +78,7 @@ router.get('/userdogList', async (req, res) => {
       SELECT Dogs.name, Dogs.dog_id FROM Dogs INNER JOIN Users ON
       Dogs.owner_id = Users.user_id WHERE Users.username = ?`, [req.session.username]);
     if (rows.length === 0) {
+      // returns empty if
       return;
     }
     // Session Login
