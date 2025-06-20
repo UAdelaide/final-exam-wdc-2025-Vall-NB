@@ -52,7 +52,7 @@ router.get('/api/walkrequests/open', function(req, res) {
 });
 
 
-router.get('/api/walkrequests/open', function(req, res) {
+router.get('/api/walkers/summary', function(req, res) {
   try {
     req.pool.getConnection(function(err,connection) {
       if (err) {
