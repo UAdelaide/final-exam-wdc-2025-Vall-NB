@@ -11,6 +11,7 @@ router.get('/test.txt', function(req, res) {
 });
 
 router.get('/api/dogs', function(req, res) {
+  try {
     req.pool.getConnection(function(err,connection) {
       if (err) {
         res.sendStatus(500);
@@ -23,6 +24,7 @@ router.get('/api/dogs', function(req, res) {
 
       });
     });
+  } 
 });
 
 
