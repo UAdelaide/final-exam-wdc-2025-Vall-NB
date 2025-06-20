@@ -26,6 +26,7 @@ function login() {
 
 function tablegen() {
     var rowstr = ``;
+    var name = '';
     var xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange = function() {
@@ -34,6 +35,7 @@ function tablegen() {
             document.getElementById('table-body').innerHTML = '';
             rowstr = ``;
             for (var i = 0; i < this.responseText.length; i++) {
+                name = r
                 rowstr = `<tr> <td>${data[i].dog_name}</td><td>${data[i].owner_username}</td><td>${data[i].size}</td>`;
                 document.getElementById('dog_id').innerHTML += rowstr;
                     var xhttp2 = new XMLHttpRequest();
