@@ -34,7 +34,7 @@ function tablegen() {
             document.getElementById('table-body').innerHTML = '';
             rowstr = ``;
             for (var i = 0; i < this.responseText.length; i++) {
-                rowstr = `<tr> <td>${data[i].name}</td><td>${data[i].name}</td>`;
+                rowstr = `<tr> <td>${data[i].dog_name}</td><td>${data[i].owner_username}</td>`;
                 document.getElementById('dog_id').innerHTML += rowstr;
             }
         }
