@@ -12,7 +12,7 @@ var app = express();
 let dbConnectionPool;
 (async () => {
     try {
-        var dbConnectionPool = mysql.createPool({ database: 'pokepare', user: 'root' });
+        dbConnectionPool = mysql.createPool({ database: 'pokepare', user: 'root' });
 
         var exist = dbConnectionPool.query("SELECT * FROM Users");
         if (exist.length === 0) {
@@ -26,12 +26,12 @@ let dbConnectionPool;
         console.error("Error setting up database.");
     }
 })();
-/*
+
 app.use(function(req, res, next) {
     req.pool = dbConnectionPool;
     next();
 });
-*/
+
 
 app.use(logger('dev'));
 app.use(express.json());
