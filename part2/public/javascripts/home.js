@@ -32,7 +32,7 @@ function tablegen(callback) {
             var data = JSON.parse(this.responseText);
             document.getElementById('table-body').innerHTML = '';
             for (var i = 0; i < this.responseText.length; i++) {
-                document.getElementById('table-body').innerHTML += `<tr> <td>${data[i].dog_name}</td><td>${data[i].owner_username}</td><td>${data[i].size}</td><td><img alt="${data[i].dog_name}">></td>`;
+                document.getElementById('table-body').innerHTML += `<tr> <td>${data[i].dog_name}</td><td>${data[i].owner_username}</td><td>${data[i].size}</td><td><img src="" alt="${data[i].dog_name}">></td>`;
 
             }
             callback();
