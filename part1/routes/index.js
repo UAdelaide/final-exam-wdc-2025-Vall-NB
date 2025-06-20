@@ -22,4 +22,20 @@ router.get('/api/dogs', function(req, res) {
 });
 
 
+router.get('/api/walkrequests/open', function(req, res) {
+    req.pool.getConnection(function(err,connection) {
+      if (err) {
+        res.sendStatus(500);
+        return;
+      }
+      connection.execute('SELECT WalkRequests.request_id, Dogs.name , WalkRequests.requested_time, WalkRequests.durationminutes, WalkRequests.location
+      Users.username FROM ((Requests INNER JOIN Dogs ON Dogs.dog_id= WalkRequests.dog_id)
+      INNER JOIN Users ON Users.user_id  = Dogs.owner_id) WHERE WalkRequests.stats = 1', function (error, results, fields) {
+      connection.release();
+        if (error) throw error;
+          res.send(results);
+      });
+    });
+});
+
 module.exports = router;
