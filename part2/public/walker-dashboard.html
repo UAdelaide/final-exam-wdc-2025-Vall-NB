@@ -65,9 +65,7 @@
             const result = await res.json();
 
             if (!res.ok) throw new Error(result.error || 'Application failed');
-            message.value = this.result;
-            error.value = '';
-            await loadWalkRequests();
+            return(result())
           } catch (err) {
             error.value = err.message;
             message.value = '';
