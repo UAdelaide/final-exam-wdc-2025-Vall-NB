@@ -24,7 +24,9 @@ router.get('/api/dogs', function(req, res) {
 
       });
     });
-  } 
+  } catch(err) {
+    console.error("Error setting up database.");
+  }
 });
 
 
