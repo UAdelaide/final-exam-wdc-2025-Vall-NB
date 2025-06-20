@@ -7,7 +7,11 @@ function login() {
         if (this.readyState === 4 && this.status === 200) {
             var data = json.parse(this.responseText);
 
-            if (data[0].)
+            if (data[0].role === 1) {
+
+            } else {
+                location.replace()
+            }
             // Redirect
         }
     };
