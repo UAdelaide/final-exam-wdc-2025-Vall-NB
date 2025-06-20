@@ -42,3 +42,6 @@ function tablegen(callback) {
 
 }
 
+function imggen() {
+    
+}
