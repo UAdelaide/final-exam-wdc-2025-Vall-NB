@@ -41,3 +41,4 @@ function tablegen(callback) {
     xhttp.send();
 
 }
+
