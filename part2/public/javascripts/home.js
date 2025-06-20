@@ -24,7 +24,7 @@ function login() {
     xhttp.send(JSON.stringify({email: loginmail, password: loginpass}));
 }
 
-function tablegen() {
+function tablegen(callback) {
     var rowstr = ``;
     var name = '';
     var xhttp = new XMLHttpRequest();
