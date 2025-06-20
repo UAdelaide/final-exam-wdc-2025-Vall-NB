@@ -9,3 +9,7 @@ function logout() {
     xhttp.open("GET", "/logout", true);
     xhttp.send();
 }
+
+function optiongen() {
+    
+}
