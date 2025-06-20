@@ -60,14 +60,12 @@
         async function getCurrentUser() {
           try {
             const res = await fetch(`/user/me`, {
-              method: 'Get',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ walker_id: user })
+              method: 'GET',
             });
             const result = await res.json();
 
             if (!res.ok) throw new Error(result.error || 'Application failed');
-            message.value = result.message;
+            message.value = result;
             error.value = '';
             await loadWalkRequests();
           } catch (err) {
