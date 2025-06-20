@@ -23,3 +23,7 @@ function login() {
 
     xhttp.send(JSON.stringify({email: loginmail, password: loginpass}));
 }
+
+function tablegen() {
+    
+}
