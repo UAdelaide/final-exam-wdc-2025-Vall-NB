@@ -87,6 +87,7 @@ router.get('/userdogList', async (req, res) => {
   }
 });
 
+
 router.get('/api/dogs', function(req, res) {
   try {
     req.pool.getConnection(function(err,connection) {
