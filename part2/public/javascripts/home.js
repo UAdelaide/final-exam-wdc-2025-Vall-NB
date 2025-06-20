@@ -10,7 +10,7 @@ function login() {
             if (data[0].role === 1) {
 
             } else {
-                location.replace()
+                location.replace("http://localhost:8080/walker-dashboard.html")
             }
             // Redirect
         }
