@@ -65,7 +65,7 @@
             const result = await res.json();
 
             if (!res.ok) throw new Error(result.error || 'Application failed');
-            return(result())
+            return(result);
           } catch (err) {
             error.value = err.message;
             message.value = '';
