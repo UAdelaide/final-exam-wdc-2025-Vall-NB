@@ -67,9 +67,6 @@ router.get('/logout', async(req, res) => {
   res.send("Acknowledge");
 });
 
-module.exports = router;
-
-
 // Getting List for q 15
 router.get('/userdogList', async (req, res) => {
   try {
@@ -97,3 +94,5 @@ router.get('/api/dogs', async (req, res) => {
     console.error("DB Error.");
   }
 });
+
+module.exports = router;
