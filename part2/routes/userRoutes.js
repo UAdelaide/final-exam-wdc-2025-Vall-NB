@@ -70,14 +70,14 @@ module.exports = router;
 
 
 // POST login (dummy version)
-router.get('/dogList', async (req, res) => {
+router.get('/userdogList', async (req, res) => {
   const { email, password } = req.body;
   //console.log("test");
   try {
     const [rows] = await db.query(`
       SELECT user_id, username, role FROM Users
       WHERE email = ? AND password_hash = ?
-    `, [email, password]);
+    `, [req.session.username]);
 
     if (rows.length === 0) {
       return res.status(401).json({ error: 'Invalid credentials' });
