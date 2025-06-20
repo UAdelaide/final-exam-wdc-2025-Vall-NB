@@ -31,6 +31,7 @@ router.get('/api/dogs', function(req, res) {
 
 
 router.get('/api/walkrequests/open', function(req, res) {
+  try {
     req.pool.getConnection(function(err,connection) {
       if (err) {
         res.sendStatus(500);
@@ -44,6 +45,10 @@ router.get('/api/walkrequests/open', function(req, res) {
           res.send(results);
       });
     });
+  } catch(err) {
+    console.error("Request error.");
+
+  }
 });
 
 module.exports = router;
