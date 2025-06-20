@@ -70,10 +70,8 @@ router.get('/logout', async(req, res) => {
 module.exports = router;
 
 
-// POST login (dummy version)
+// Getting 
 router.get('/userdogList', async (req, res) => {
-  const { email, password } = req.body;
-  //console.log("test");
   try {
     // Gets all dogs associated with user session
     const [rows] = await db.query(`
