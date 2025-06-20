@@ -78,10 +78,10 @@ router.get('/userdogList', async (req, res) => {
       SELECT Dogs.name, Dogs.dog_id FROM Dogs INNER JOIN Users ON
       Dogs.owner_id = Users.user_id WHERE Users.username = ?`, [req.session.username]);
     if (rows.length === 0) {
-      // returns empty if
+      // returns empty if no results
       res.status(200);
     }
-    // Session Login
+    // Returns list
     response.send(rows);
   } catch (error) {
     res.status(500).json({ error: 'List Get Failed' });
