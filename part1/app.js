@@ -16,6 +16,8 @@ app.use(function(req, res, next) {
     next();
 });
 
+(async ())
+
 
 app.use(logger('dev'));
 app.use(express.json());
