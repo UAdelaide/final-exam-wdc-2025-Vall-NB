@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/test.txt', function(req, res) {
-
+  res.send("Acknowledge");
 });
 
 router.get('/api/dogs', function(req, res) {
