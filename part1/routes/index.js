@@ -59,7 +59,7 @@ router.get('/api/walkers/summary', function(req, res) {
         res.sendStatus(500);
         return;
       }
-      connection.execute(`SELECT AVG(rating) AS average_rating, COUNT(rating_id) AS total_ratings FROM WalkRatings INNER JOIN Users ON WalkRatings.walker_ID = Users.user_id GROUP BY walker_id`, function (error, results, fields) {
+      connection.execute(`SELECT User.username AS AVG(rating) AS average_rating, COUNT(rating_id) AS total_ratings FROM WalkRatings INNER JOIN Users ON WalkRatings.walker_ID = Users.user_id GROUP BY walker_id`, function (error, results, fields) {
       connection.release();
         if (error) throw error;
           res.send(results);
