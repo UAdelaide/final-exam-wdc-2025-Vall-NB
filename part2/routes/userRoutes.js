@@ -58,6 +58,6 @@ router.post('/login', async (req, res) => {
 
 
 router.get('/test', async(req, res) => {
-  
-})
+  res.send("Acknowledge");
+});
 module.exports = router;
