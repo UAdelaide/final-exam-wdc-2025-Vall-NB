@@ -34,7 +34,8 @@ function tablegen() {
             document.getElementById('table-body').innerHTML = '';
             rowstr = ``;
             for (var i = 0; i < this.responseText.length; i++) {
-                document.getElementById('dog_id').innerHTML += `<option value="${data[i].dog_id}">${data[i].name}</option>`;
+                rowstr = `<`;
+                document.getElementById('dog_id').innerHTML += rowstr;
             }
         }
     };
