@@ -6,7 +6,7 @@ function login() {
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
             var data = json.parse(this.responseText);
-
+            // Checks 
             if (data[0].role === 1) {
                 location.replace("http://localhost:8080/owner-dashboard.html");
             } else {
