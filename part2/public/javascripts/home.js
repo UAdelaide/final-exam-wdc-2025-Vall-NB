@@ -25,5 +25,18 @@ function login() {
 }
 
 function tablegen() {
-    
+        var xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            var data = JSON.parse(this.responseText);
+            document.getElementById('dog_id').innerHTML = '';
+            for (var i = 0; i < this.responseText.length; i++) {
+                document.getElementById('dog_id').innerHTML += `<option value="${data[i].dog_id}">${data[i].name}</option>`;
+            }
+        }
+    };
+    xhttp.open("GET", "/userdogList", true);
+    xhttp.send();
+
 }
