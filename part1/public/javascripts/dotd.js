@@ -3,6 +3,7 @@ function debut() {
 
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
+            var message = JSON.parse(this.responseText);
             document.getElementById('dotd').src = this.responseText;
         }
 
