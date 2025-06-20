@@ -18,6 +18,7 @@ function optiongen() {
             var data = JSON.parse(this.responseText);
             document.getElementById('dog_id').innerHTML = '';
             for (var i = 0; i < this.responseText.length; i++) {
+                // For each dog add an option
                 document.getElementById('dog_id').innerHTML += `<option value="${data[i].dog_id}">${data[i].name}</option>`;
             }
         }
