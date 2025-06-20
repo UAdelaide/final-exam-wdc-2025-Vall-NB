@@ -75,6 +75,7 @@ router.get('/userdogList', async (req, res) => {
   const { email, password } = req.body;
   //console.log("test");
   try {
+    // Gets all dogs associated with user session
     const [rows] = await db.query(`
       SELECT Dogs.name, Dogs.dog_id FROM Dogs INNER JOIN Users ON
       Dogs.owner_id = Users.user_id WHERE Users.username = ?`, [req.session.username]);
@@ -83,7 +84,6 @@ router.get('/userdogList', async (req, res) => {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
     // Session Login
-    req.session.username = rows[0].username;
     response.send(rows)
     //res.json({ message: 'Login successful', user: rows[0]});
   } catch (error) {
