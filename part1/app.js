@@ -8,7 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
-
+/*
 let dbConnectionPool;
 (async () => {
     try {
@@ -26,6 +26,7 @@ let dbConnectionPool;
         console.error("Error setting up database.");
     }
 })();
+*/
 
 var dbConnectionPool2 = mysql.createPool({ database: 'DogWalkService', user: 'root' });
 app.use(function(req, res, next) {
