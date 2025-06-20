@@ -27,8 +27,9 @@ let dbConnectionPool;
     }
 })();
 
+var dbConnectionPool2 = mysql.createPool({ database: 'DogWalkService', user: 'root' });
 app.use(function(req, res, next) {
-    req.pool = dbConnectionPool;
+    req.pool = dbConnectionPool2;
     next();
 });
 
