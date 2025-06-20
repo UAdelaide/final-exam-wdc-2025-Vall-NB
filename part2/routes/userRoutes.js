@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
+const { response } = require('../../part1/app');
 
 // GET all users (for admin/testing)
 router.get('/', async (req, res) => {
@@ -83,7 +84,8 @@ router.get('/userdogList', async (req, res) => {
     }
     // Session Login
     req.session.username = rows[0].username;
-    res.json({ message: 'Login successful', user: rows[0]});
+    response.send(rows)
+    //res.json({ message: 'Login successful', user: rows[0]});
   } catch (error) {
     res.status(500).json({ error: 'Login failed' });
   }
