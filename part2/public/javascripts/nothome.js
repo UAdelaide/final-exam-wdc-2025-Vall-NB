@@ -3,7 +3,7 @@ function logout() {
 
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
-            location.replace("http://localhost:8080/");
+            window.location.replace("http://localhost:8080/");
         }
     };
     xhttp.open("GET", "/logout", true);
