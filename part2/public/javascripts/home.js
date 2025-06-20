@@ -34,7 +34,7 @@ function tablegen() {
             document.getElementById('table-body').innerHTML = '';
             rowstr = ``;
             for (var i = 0; i < this.responseText.length; i++) {
-                rowstr = `<`;
+                rowstr = `<tr>`;
                 document.getElementById('dog_id').innerHTML += rowstr;
             }
         }
