@@ -8,6 +8,6 @@ function debut() {
         }
     };
 
-    xhttp.open("GET", " https://dog.ceo/dog-api/documentation/random", true);
+    xhttp.open("GET", "  https://dog.ceo/api/breeds/image/random Fetch!", true);
     xhttp.send();
 }
