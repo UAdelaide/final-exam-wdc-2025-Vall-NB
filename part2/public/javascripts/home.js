@@ -44,5 +44,19 @@ function tablegen(callback) {
 }
 
 function imggen() {
+    var xhttp = new XMLHttpRequest();
 
+    xhttp.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            var data = JSON.parse(this.responseText);
+            document.getElementById('table-body').innerHTML = '';
+            for (var i = 0; i < this.responseText.length; i++) {
+                document.getElementById('table-body').innerHTML += `<tr> <td>${data[i].dog_name}</td><td>${data[i].owner_username}</td><td>${data[i].size}</td><td><img class="dogimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU3HFVnkYFJ_OIogo__Qv58bmhwRqZJcQhOA&s" alt="${data[i].dog_name}">></td></tr>`;
+                callback(i);
+            }
+            callback();
+        }
+    };
+    xhttp.open("GET", "/api/dogs", true);
+    xhttp.send();
 }
