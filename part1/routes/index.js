@@ -32,8 +32,8 @@ router.get('/api/walkrequests/open', function(req, res) {
         res.sendStatus(500);
         return;
       }
-      connection.execute(`SELECT WalkRequests.request_id, Dogs.name AS dog_name, WalkRequests.requested_time, WalkRequests.durationminutes, WalkRequests.location
-      Users.username FROM ((Requests INNER JOIN Dogs ON Dogs.dog_id= WalkRequests.dog_id)
+      connection.execute(`SELECT WalkRequests.request_id, Dogs.name AS dog_name, WalkRequests.requested_time, WalkRequests.duration_minutes, WalkRequests.location
+      Users.username AS owner_username FROM ((Requests INNER JOIN Dogs ON Dogs.dog_id= WalkRequests.dog_id)
       INNER JOIN Users ON Users.user_id  = Dogs.owner_id) WHERE WalkRequests.stats = 1`, function (error, results, fields) {
       connection.release();
         if (error) throw error;
