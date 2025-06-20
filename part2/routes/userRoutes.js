@@ -79,7 +79,7 @@ router.get('/userdogList', async (req, res) => {
       Dogs.owner_id = Users.user_id WHERE Users.username = ?`, [req.session.username]);
     if (rows.length === 0) {
       // returns empty if
-      return;
+      res.status(200);
     }
     // Session Login
     response.send(rows);
