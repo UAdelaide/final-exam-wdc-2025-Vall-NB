@@ -3,14 +3,7 @@ function logout() {
 
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
-            var data = json.parse(this.responseText);
-            // Checks if dogwalker
-            if (data[0].role === 1) {
-                // Redirects page
-                location.replace("http://localhost:8080/owner-dashboard.html");
-            } else {
-                location.replace("http://localhost:8080/walker-dashboard.html");
-            }
+            location.replace("http://localhost:8080/");
         }
     };
     xhttp.open("GET", "/logout", true);
