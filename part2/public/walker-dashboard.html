@@ -66,7 +66,7 @@
             const result = await res.json();
             // If exists, run apply to walk
             if (!res.ok) throw new Error(result.error || 'Application failed');
-            callback()
+            callback(requestId, result)
             return result;
           } catch (err) {
             error.value = err.message;
