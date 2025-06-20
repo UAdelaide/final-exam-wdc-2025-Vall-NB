@@ -9,7 +9,7 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-var dbConnectionPool = mysql.createPool({ database: 'pokepare' });
+var dbConnectionPool = mysql.createPool({ database: 'pokepare', user: 'root' });
 
 app.use(function(req, res, next) {
     req.pool = dbConnectionPool;
