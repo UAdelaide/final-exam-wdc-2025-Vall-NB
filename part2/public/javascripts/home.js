@@ -9,9 +9,9 @@ function login() {
             // Checks if dogwalker
             if (data[0].role === 1) {
                 // Redirects page
-                location.replace("http://localhost:8080/owner-dashboard.html");
+                location.href = ("http://localhost:8080/owner-dashboard.html");
             } else {
-                location.replace("http://localhost:8080/walker-dashboard.html");
+                location.href = ("http://localhost:8080/walker-dashboard.html");
             }
         }
     };
