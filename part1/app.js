@@ -18,7 +18,7 @@ app.use(function(req, res, next) {
 
 (async () =>  {
     try {
-
+        var dbConnectionPool = mysql.createPool({ database: 'pokepare', user: 'root' });
     } catch(err) {
         console.error("Error setting up database.");
     }
