@@ -12,7 +12,7 @@ var app = express();
 let dbConnectionPool;
 (async () => {
     try {
-        dbConnectionPool = mysql.createPool({ database: 'pokepare', user: 'root' });
+        dbConnectionPool = mysql.createPool({ database: 'DogWalkService', user: 'root' });
 
         var exist = dbConnectionPool.query("SELECT * FROM Users");
         if (exist.length === 0) {
