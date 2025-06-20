@@ -59,7 +59,7 @@ router.get('/api/walkers/summary', function(req, res) {
         res.sendStatus(500);
         return;
       }
-      connection.execute(`SELECT AVG(rating) AS average_rating`, function (error, results, fields) {
+      connection.execute(`SELECT AVG(rating) AS average_rating, `, function (error, results, fields) {
       connection.release();
         if (error) throw error;
           res.send(results);
