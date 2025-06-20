@@ -17,7 +17,6 @@ function optiongen() {
         if (this.readyState === 4 && this.status === 200) {
             var data = JSON.parse(this.responseText);
             document.getElementById('dog_id').innerHTML = '';
-
             for (var i = 0; i < this.responseText.length; i++) {
                 document.getElementById('dog_id').innerHTML += `<option value="${data[i].dog_id}">${data[i].name}</option>`;
             }
@@ -25,5 +24,4 @@ function optiongen() {
     };
     xhttp.open("GET", "/doglist", true);
     xhttp.send();
-
 }
