@@ -70,7 +70,7 @@ router.get('/logout', async(req, res) => {
 module.exports = router;
 
 
-// Getting 
+// Getting List for q 15
 router.get('/userdogList', async (req, res) => {
   try {
     // Gets all dogs associated with user session
@@ -82,7 +82,7 @@ router.get('/userdogList', async (req, res) => {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
     // Session Login
-    response.send(rows)
+    response.send(rows);
     //res.json({ message: 'Login successful', user: rows[0]});
   } catch (error) {
     res.status(500).json({ error: 'Login failed' });
