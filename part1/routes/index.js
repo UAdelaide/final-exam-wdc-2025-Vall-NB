@@ -25,7 +25,7 @@ router.get('/api/dogs', function(req, res) {
       });
     });
   } catch(err) {
-    console.error("Error setting up database.");
+    console.error("DB Error.");
   }
 });
 
@@ -46,7 +46,7 @@ router.get('/api/walkrequests/open', function(req, res) {
       });
     });
   } catch(err) {
-    console.error("Request error.");
+    console.error("DB error.");
 
   }
 });
