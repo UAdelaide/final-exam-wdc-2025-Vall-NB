@@ -90,13 +90,8 @@ router.get('/userdogList', async (req, res) => {
 
 router.get('/api/dogs', async (req, res) => {
   try {
-    const [rows] = await db.query('SELECT name AS dog_name, size, username AS owner_username FROM Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id', function (error, results, fields) {
-        connection.release();
-        if (error) throw error;
-        res.send(results);
-
-      });
-    });
+    const [rows] = await db.query('SELECT name AS dog_name, size, username AS owner_username FROM Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id');
+    
   } catch (error) {
     console.error("DB Error.");
   }
