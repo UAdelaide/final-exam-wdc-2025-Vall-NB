@@ -36,7 +36,7 @@ function tablegen() {
             }
         }
     };
-    xhttp.open("GET", "/userdogList", true);
+    xhttp.open("GET", "/api/dogs", true);
     xhttp.send();
 
 }
