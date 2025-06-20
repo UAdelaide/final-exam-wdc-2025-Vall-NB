@@ -41,18 +41,13 @@ function tablegen(callback) {
     xhttp.send();
 }
 
-function imggen() {
+function imggen(imagenum) {
     var xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
             var data = JSON.parse(this.responseText);
-            document.getElementsByClassName('dogimg').src = data.message;
-            for (var i = 0; i < this.responseText.length; i++) {
-                document.getElementById('table-body').innerHTML += `<tr> <td>${data[i].dog_name}</td><td>${data[i].owner_username}</td><td>${data[i].size}</td><td><img class="dogimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU3HFVnkYFJ_OIogo__Qv58bmhwRqZJcQhOA&s" alt="${data[i].dog_name}">></td></tr>`;
-                callback(i);
-            }
-            callback();
+            document.getElementsByClassName('dogimg')[imagenum].src = data.message;
         }
     };
     xhttp.open("GET", "https://dog.ceo/api/breeds/image/random", true);
