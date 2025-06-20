@@ -16,9 +16,8 @@ router.get('/api/dogs', function(req, res) {
         res.sendStatus(500);
         return;
       }
-      connection.execute('SELECT name AS dog_name, size, username AS  FROM Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id', function (error, results, fields) {
+      connection.execute('SELECT name AS dog_name, size, username AS owner_username FROM Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id', function (error, results, fields) {
         connection.release();
-        console.log(results);
         if (error) throw error;
         res.send(results);
 
