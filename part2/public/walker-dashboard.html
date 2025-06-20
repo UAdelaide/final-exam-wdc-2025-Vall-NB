@@ -67,14 +67,14 @@
             // If exists, run apply to walk
             if (!res.ok) throw new Error(result.error || 'Application failed');
             callback(requestId, result)
-            return result;
+            //return result;
           } catch (err) {
             error.value = err.message;
             return '';
           }
         }
 
-        async function applyToWalk(requestId) {
+        async function applyToWalk(requestId, userid) {
           try {
             const res = await fetch(`/api/walks/${requestId}/apply`, {
               method: 'POST',
