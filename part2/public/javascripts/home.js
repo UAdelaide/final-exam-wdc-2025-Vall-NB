@@ -35,6 +35,7 @@ function tablegen(callback) {
                 document.getElementById('table-body').innerHTML += `<tr> <td>${data[i].dog_name}</td><td>${data[i].owner_username}</td><td>${data[i].size}</td>`;
 
             }
+            callback();
         }
     };
     xhttp.open("GET", "/api/dogs", true);
