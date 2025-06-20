@@ -19,6 +19,8 @@ app.use(function(req, res, next) {
 (async () =>  {
     try {
 
+    } catch(err) {
+        console.log()
     }
 })
 
