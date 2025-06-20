@@ -51,4 +51,26 @@ router.get('/api/walkrequests/open', function(req, res) {
   }
 });
 
+
+router.get('/api/walkrequests/open', function(req, res) {
+  try {
+    req.pool.getConnection(function(err,connection) {
+      if (err) {
+        res.sendStatus(500);
+        return;
+      }
+      connection.execute(`SELECT WalkRequests.request_id, Dogs.name AS dog_name, WalkRequests.requested_time, WalkRequests.duration_minutes, WalkRequests.location,
+      Users.username AS owner_username FROM ((WalkRequests INNER JOIN Dogs ON Dogs.dog_id= WalkRequests.dog_id)
+      INNER JOIN Users ON Users.user_id  = Dogs.owner_id) WHERE WalkRequests.status = 1`, function (error, results, fields) {
+      connection.release();
+        if (error) throw error;
+          res.send(results);
+      });
+    });
+  } catch(err) {
+    console.error("DB error.");
+
+  }
+});
+
 module.exports = router;
