@@ -13,6 +13,22 @@
     <p style="color:grey;"> Pedigree of Pug </p>
     <p style="color:grey;text-align: center;"> Owner- Mario </p>
 
-    <script> debut(); </script>
+    <script>
+    function debut() {
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            var res = JSON.parse(this.responseText);
+            document.getElementById('dotd').src = res.message;
+        }
+    };
+
+    xhttp.open("GET", "  https://dog.ceo/api/breeds/image/random", true);
+    xhttp.send();
+    }
+
+
+    debut(); </script>
 </body>
 </html>
