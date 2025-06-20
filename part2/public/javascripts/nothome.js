@@ -19,7 +19,7 @@ function optiongen() {
             document.getElementById('dog_id').innerHTML = '';
 
             for (var i = 0; i < this.responseText.length; i++) {
-                document.getElementById('dog_id').innerHTML += '<option value="${}">Volvo</option>';
+                document.getElementById('dog_id').innerHTML += `<option value="${data[i].}">Volvo</option>`;
             }
         }
     };
