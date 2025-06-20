@@ -3,7 +3,6 @@
 <head>
     <title>Express</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <script src="./javascripts/dotd.js"></script>
 </head>
 
 <body>
@@ -14,18 +13,18 @@
     <p style="color:grey;text-align: center;"> Owner- Mario </p>
 
     <script>
-    function debut() {
-        var xhttp = new XMLHttpRequest();
+        function debut() {
+            var xhttp = new XMLHttpRequest();
 
-        xhttp.onreadystatechange = function() {
-            if (this.readyState === 4 && this.status === 200) {
-                var res = JSON.parse(this.responseText);
-                document.getElementById('dotd').src = res.message;
-            }
-        };
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    var res = JSON.parse(this.responseText);
+                    document.getElementById('dotd').src = res.message;
+                }
+            };
 
-            xhttp.open("GET", "  https://dog.ceo/api/breeds/image/random", true);
-            xhttp.send();
+                xhttp.open("GET", "  https://dog.ceo/api/breeds/image/random", true);
+                xhttp.send();
         }
 
 
