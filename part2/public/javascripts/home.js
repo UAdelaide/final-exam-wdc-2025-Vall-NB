@@ -24,7 +24,6 @@ function login() {
     xhttp.send(JSON.stringify({email: loginmail, password: loginpass}));
 }
 
-rowstr
 function tablegen() {
     var rowstr = ``;
     var name = '';
