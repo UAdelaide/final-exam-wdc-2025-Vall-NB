@@ -86,3 +86,22 @@ router.get('/userdogList', async (req, res) => {
     res.status(500).json({ error: 'List Get Failed' });
   }
 });
+
+router.get('/api/dogs', function(req, res) {
+  try {
+    req.pool.getConnection(function(err,connection) {
+      if (err) {
+        res.sendStatus(500);
+        return;
+      }
+      connection.execute('SELECT name AS dog_name, size, username AS owner_username FROM Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id', function (error, results, fields) {
+        connection.release();
+        if (error) throw error;
+        res.send(results);
+
+      });
+    });
+  } catch(err) {
+    console.error("DB Error.");
+  }
+});
