@@ -62,6 +62,7 @@ router.get('/test', async(req, res) => {
 });
 
 router.get('/logout', async(req, res) => {
+  req.session.destroy();
   res.send("Acknowledge");
 });
 
