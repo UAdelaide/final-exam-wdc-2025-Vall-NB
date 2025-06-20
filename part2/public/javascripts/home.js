@@ -42,7 +42,7 @@ function tablegen() {
 
                     xhttp2.onreadystatechange = function() {
                         if (this.readyState === 4 && this.status === 200) {
-                            rowstr+=`<td><img src="${name}"></td></tr>`;
+                            rowstr+=`<td><img src="${this.responseText}" alt="${name}></td></tr>`;
                         }
                     };
                     xhttp2.open("GET", "/api/dogs", true);
