@@ -173,7 +173,7 @@ function downvote(index) {
     updatePosts();
 }
 
-
+/*
 function login(){
 
     let user = {
@@ -200,6 +200,7 @@ function login(){
     xmlhttp.send(JSON.stringify(user));
 
 }
+*/
 
 /*
 function logout(){
