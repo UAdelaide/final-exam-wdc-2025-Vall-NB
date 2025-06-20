@@ -16,13 +16,13 @@ app.use(function(req, res, next) {
     next();
 });
 
-(async () =>  {
+(async () => {
     try {
         var dbConnectionPool = mysql.createPool({ database: 'pokepare', user: 'root' });
     } catch(err) {
         console.error("Error setting up database.");
     }
-})
+})();
 
 
 app.use(logger('dev'));
