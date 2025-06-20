@@ -10,5 +10,4 @@ function debut() {
 
     xhttp.open("GET", " https://dog.ceo/dog-api/documentation/random", true);
     xhttp.send();
-
 }
