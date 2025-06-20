@@ -55,6 +55,6 @@ function imggen() {
             callback();
         }
     };
-    xhttp.open("GET", "/api/dogs", true);
+    xhttp.open("GET", "https://dog.ceo/api/breeds/image/random", true);
     xhttp.send();
 }
