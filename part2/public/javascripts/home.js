@@ -15,7 +15,7 @@ function login() {
             }
         }
     };
-
+    console.log("attempt");
     xhttp.open("POST", "/login", true);
     xhttp.setRequestHeader("Content-type", "application/json");
     // Gets email and password from index page
