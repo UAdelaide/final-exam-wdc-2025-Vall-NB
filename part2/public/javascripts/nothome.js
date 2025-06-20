@@ -17,7 +17,9 @@ function optiongen() {
         if (this.readyState === 4 && this.status === 200) {
             document.getElementById('dog_id').innerHTML = '';
 
-            for (var i = 0; i < this.responseText.length)
+            for (var i = 0; i < this.responseText.length; i++) {
+                document.getElementById('dog_id').innerHTML += '<option value="volvo">Volvo</option>';
+            }
         }
     };
     xhttp.open("GET", "/logout", true);
