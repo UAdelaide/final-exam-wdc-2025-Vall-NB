@@ -34,7 +34,7 @@ function tablegen(callback) {
             for (var i = 0; i < this.responseText.length; i++) {
                 // Appends Row
                 document.getElementById('table-body').innerHTML += `<tr> <td>${data[i].dog_name}</td><td>${data[i].owner_username}</td><td>${data[i].size}</td><td><img class="dogimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU3HFVnkYFJ_OIogo__Qv58bmhwRqZJcQhOA&s" alt="${data[i].dog_name}">></td></tr>`;
-                // Customises Image SRC
+                // Customises Image SRC for each row
                 callback(i);
             }
         }
