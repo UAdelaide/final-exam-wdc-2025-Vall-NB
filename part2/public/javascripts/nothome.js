@@ -15,7 +15,7 @@ function optiongen() {
 
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
-            data = JSON.parse(this.responseText);
+            var data = JSON.parse(this.responseText);
             document.getElementById('dog_id').innerHTML = '';
 
             for (var i = 0; i < this.responseText.length; i++) {
