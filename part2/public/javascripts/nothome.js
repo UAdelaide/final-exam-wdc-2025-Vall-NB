@@ -15,7 +15,7 @@ function optiongen() {
 
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
-            document.getElementById('')
+            document.getElementById('dog_id').innerHTML = '';
         }
     };
     xhttp.open("GET", "/logout", true);
