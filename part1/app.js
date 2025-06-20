@@ -15,8 +15,10 @@ var app = express();
         await dbConnectionPool.query("INSERT INTO Users (username, email, password_hash, role) VALUES ('alice123', 'alice@example.com', 'hashed123', 1)");
         await dbConnectionPool.query("INSERT INTO Users (username, email, password_hash, role) VALUES ('bobwalker', 'bob@example.com', 'hashed456', 2)");
 
+        if ()
         await dbConnectionPool.query("INSERT INTO Dogs (owner_id, name, size) VALUES ( (SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 2)");
         await dbConnectionPool.query("INSERT INTO Dogs (owner_id, name, size) VALUES ( (SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 2)");
+
     } catch(err) {
         console.error("Error setting up database.");
     }
