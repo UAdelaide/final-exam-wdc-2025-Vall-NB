@@ -67,7 +67,7 @@ router.get('/logout', async(req, res) => {
   res.send("Acknowledge");
 });
 
-// Getting List for q 15
+// Getting List for q15
 router.get('/userdogList', async (req, res) => {
   try {
     // Gets all dogs associated with user session
@@ -85,7 +85,7 @@ router.get('/userdogList', async (req, res) => {
   }
 });
 
-
+// Copied from part 1
 router.get('/api/dogs', async (req, res) => {
   try {
     const [doglist] = await db.query('SELECT name AS dog_name, size, username AS owner_username FROM Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id');
