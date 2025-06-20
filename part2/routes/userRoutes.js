@@ -90,12 +90,7 @@ router.get('/userdogList', async (req, res) => {
 
 router.get('/api/dogs', function(req, res) {
   try {
-    req.pool.getConnection(function(err,connection) {
-      if (err) {
-        res.sendStatus(500);
-        return;
-      }
-      const [rows] = await db.query('SELECT name AS dog_name, size, username AS owner_username FROM Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id', function (error, results, fields) {
+    const [rows] = await db.query('SELECT name AS dog_name, size, username AS owner_username FROM Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id', function (error, results, fields) {
         connection.release();
         if (error) throw error;
         res.send(results);
