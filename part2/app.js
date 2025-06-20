@@ -6,6 +6,13 @@ require('dotenv').config();
 
 const app = express();
 
+app.use(session({
+  secret: 'password',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}))
+
 // Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
