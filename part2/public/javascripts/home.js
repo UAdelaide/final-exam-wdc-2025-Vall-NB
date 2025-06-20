@@ -15,7 +15,7 @@ function login() {
             }
         }
     };
-    console.log("attempt");
+    console.log(document.getElementById('Lemail').value);
     xhttp.open("POST", "/login", true);
     xhttp.setRequestHeader("Content-type", "application/json");
     // Gets email and password from index page
