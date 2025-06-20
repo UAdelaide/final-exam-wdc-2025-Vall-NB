@@ -40,7 +40,7 @@ function tablegen() {
 
                     xhttp2.onreadystatechange = function() {
                         if (this.readyState === 4 && this.status === 200) {
-                            rowstr+=`<td>${data[i].size}</td>`;
+                            rowstr+=`<td>$}</td></tr>`;
                         }
                     };
                     xhttp2.open("GET", "/api/dogs", true);
