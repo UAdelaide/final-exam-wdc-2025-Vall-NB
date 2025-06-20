@@ -22,6 +22,8 @@ function optiongen() {
             }
         }
     };
+
+    // Get List of user's dogs via request
     xhttp.open("GET", "/userdogList", true);
     xhttp.send();
 }
