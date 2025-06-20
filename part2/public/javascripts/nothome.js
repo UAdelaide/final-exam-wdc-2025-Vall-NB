@@ -16,6 +16,7 @@ function optiongen() {
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
             var data = JSON.parse(this.responseText);
+            // Get select bar
             document.getElementById('dog_id').innerHTML = '';
             for (var i = 0; i < this.responseText.length; i++) {
                 // For each dog add an option
