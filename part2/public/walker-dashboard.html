@@ -57,7 +57,7 @@
           }
         }
 
-        async function getCurrentUser() {
+        async function getCurrentUser(callback, request_id) {
           try {
             // Request me route
             const res = await fetch(`/user/me`, {
@@ -79,7 +79,7 @@
             const res = await fetch(`/api/walks/${requestId}/apply`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ walker_id: getCurrentUser() })
+              body: JSON.stringify({ walker_id: userid })
             });
             const result = await res.json();
 
