@@ -19,11 +19,11 @@ function optiongen() {
             document.getElementById('dog_id').innerHTML = '';
 
             for (var i = 0; i < this.responseText.length; i++) {
-                document.getElementById('dog_id').innerHTML += `<option value="${data[i].dog_id}">${data</option>`;
+                document.getElementById('dog_id').innerHTML += `<option value="${data[i].dog_id}">${data[i].name}</option>`;
             }
         }
     };
-    xhttp.open("GET", "/logout", true);
+    xhttp.open("GET", "/doglist", true);
     xhttp.send();
 
 }
