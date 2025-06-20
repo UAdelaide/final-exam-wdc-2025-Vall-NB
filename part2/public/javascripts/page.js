@@ -201,6 +201,7 @@ function login(){
 
 }
 
+/*
 function logout(){
 
     // Create AJAX Request
@@ -211,3 +212,4 @@ function logout(){
     xmlhttp.send();
 
 }
+    */
