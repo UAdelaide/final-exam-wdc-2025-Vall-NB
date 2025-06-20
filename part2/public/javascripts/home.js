@@ -41,6 +41,7 @@ function tablegen(callback) {
     xhttp.send();
 }
 
+// Attatches image to a table row
 function imggen(imagenum) {
     var xhttp = new XMLHttpRequest();
 
@@ -50,6 +51,7 @@ function imggen(imagenum) {
             document.getElementsByClassName('dogimg')[imagenum].src = data.message;
         }
     };
+    // Gets random image
     xhttp.open("GET", "https://dog.ceo/api/breeds/image/random", true);
     xhttp.send();
 }
