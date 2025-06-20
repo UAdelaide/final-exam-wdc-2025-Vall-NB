@@ -75,7 +75,8 @@ router.get('/userdogList', async (req, res) => {
   //console.log("test");
   try {
     const [rows] = await db.query(`
-      SELECT Dogs.name, Dogs.dog_id FROM Users
+      SELECT Dogs.name, Dogs.dog_id FROM Dogs INNER JOIN Users ON
+      
       WHERE email = ? AND password_hash = ?
     `, [req.session.username]);
 
