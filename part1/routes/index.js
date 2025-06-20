@@ -7,6 +7,10 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/api/dogs', function(req, res) {
+
+}
+
+router.get('/api/dogs', function(req, res) {
     req.pool.getConnection(function(err,connection) {
       if (err) {
         res.sendStatus(500);
